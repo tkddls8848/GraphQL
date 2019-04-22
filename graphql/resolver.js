@@ -1,6 +1,12 @@
+const PSI = {
+    age:30,
+    name:"PSI",
+    job:"no job"
+}
+
 const resolvers = {
     Query : {
-        name : ()=>"hello resolvers"
+        Person: () => PSI
     }
 };
 

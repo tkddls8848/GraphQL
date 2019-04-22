@@ -1,3 +1,9 @@
+type PSI {
+    age: Int,
+    name: String,
+    job: String
+}
+
 type Query {
-    name:String
+    Person: PSI
 }
