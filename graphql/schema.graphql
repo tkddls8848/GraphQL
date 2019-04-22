@@ -1,9 +1,11 @@
-type PSI {
-    age: Int,
-    name: String,
-    job: String
+type Person {
+    id:Int!,
+    age: Int!,
+    name: String!,
+    job: String!
 }
 
 type Query {
-    Person: PSI
+    People: [Person]!
+    Person(id: Int!): Person
 }
