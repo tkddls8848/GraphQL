@@ -17,12 +17,12 @@ export let Movies = [
 ];
 
 export const getById = (id) => {
-    const filteredMovie = Movies.filter((Picture) => {return Picture.id === id});
+    const filteredMovie = Movies.filter((Movie) => {return Movie.id === id});
     return filteredMovie[0]
 }
 
 export const deleteMovie = (id) => {
-    const filteredMovie = Movies.filter((Picture) => Picture.id !== id);
+    const filteredMovie = Movies.filter((Movie) => Movie.id !== id);
     if(Movies.length > filteredMovie.length){
         Movies = filteredMovie;
         return true;
