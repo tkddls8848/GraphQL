@@ -1,5 +1,8 @@
 import fetch from "node-fetch";
+import { response } from "express";
 const API_URL = "https://yts.am/api/v2/list_movies.json?";
+const API_URL_DETAILS = "https://yts.am/api/v2/movie_details.json?";
+
 
 export const getMovies = (limit, rating) => {
     let REQUEST_URL = API_URL;
@@ -14,4 +17,16 @@ export const getMovies = (limit, rating) => {
         .then(res => res.json())
         .then(json => json.data.movies);
     
+}
+
+export const getMovie = (id) => {
+    let REQUEST_URL = API_URL_DETAILS;
+    if(id){
+        REQUEST_URL += `movie_id=${id}`;
+    } else {
+        response.status(400);
+    }
+    return fetch(`${REQUEST_URL}`)
+        .then(res => res.json())
+        .then(json => json.data.movie);
 }
