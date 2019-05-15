@@ -4,6 +4,7 @@ type Movie {
     rating:Float!,
     summary:String,
     language:String,
+    genres:String,
     medium_cover_image:String!
 }
 
